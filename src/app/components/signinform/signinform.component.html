@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      Formulaire d'inscription
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nom</label>
+          <input type="text"  [(ngModel)]="nom" class="form-control" id="name" name="name">
+        </div>
+
+        <div class="mb-3">
+          <label for="firstname" class="form-label">Prénom</label>
+          <input type="text" [(ngModel)]="prenom" class="form-control" id="firstname" name="firstname">
+        </div>
+
+        <div class="mb-3">
+          <label for="username" class="form-label">Nom d'utilisateur</label>
+          <input type="text" [(ngModel)]="nomuser" class="form-control" id="username" name="username">
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" [(ngModel)]="email" class="form-control" id="email" name="email">
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Mot de passe</label>
+          <input type="password" [(ngModel)]="mdp" class="form-control" id="password" name="password">
+        </div>
+
+        <div class="mb-3">
+          <label for="passwordConfirm" class="form-label">Confirmez votre mot de passe</label>
+          <input type="password" [(ngModel)]="mdpConfirm" class="form-control" id="passwordConfirm" name="passwordConfirm">
+        </div>
+
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!---balise affichage---->
+<!-----<h4 *ngIf="" class="alert alert-success mt-4">salut</h4>-->
+
