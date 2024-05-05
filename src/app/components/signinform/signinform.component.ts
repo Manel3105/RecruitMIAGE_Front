@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormsModule} from "@angular/forms";
-import {InscriptionService} from "../../services/inscription.service";
 import {Router} from "express";
+import {InscriptionService} from "../../services/inscription.service";
 
 @Component({
   selector: 'app-signinform',
@@ -20,8 +20,8 @@ export class SigninformComponent {
   email="";
   mdp="";
   mdpConfirm="";
-  constructor(private inscription : InscriptionService, private routeur: Router) { }
-  inscire() {
+  /*constructor(private inscription : InscriptionService, private routeur: Router) { }
+  inscrire() {
 
     this.user = {
       nom: this.nom,
@@ -34,7 +34,7 @@ export class SigninformComponent {
     this.inscription.addutilisateur(this?.user).subscribe(data => {
       console.log(data);
     });
-  }
+  }*/
 
 }
 //fonction alerte message

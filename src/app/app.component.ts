@@ -3,6 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import {InscriptionService} from "./services/inscription.service";
 
+
+
+// @ts-ignore
 @Component({
   selector: 'app-root',
   standalone: true,
