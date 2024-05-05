@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormsModule} from "@angular/forms";
+import {Router} from "@angular/router";
 import {InscriptionService} from "../../services/inscription.service";
-import {Router} from "express";
 
 @Component({
   selector: 'app-signinform',
@@ -21,7 +21,7 @@ export class SigninformComponent {
   mdp="";
   mdpConfirm="";
   constructor(private inscription : InscriptionService, private routeur: Router) { }
-  inscire() {
+  inscrire() {
 
     this.user = {
       nom: this.nom,

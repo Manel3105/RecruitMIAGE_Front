@@ -7,11 +7,11 @@ import {Observable} from "rxjs";
 })
 export class InscriptionService {
 
-  private apiUrl = 'http://localhost:5000/register';
+  private apiUrl = 'http://localhost:3000/register';
 
   constructor(private http: HttpClient) { }
 
   addutilisateur(utilisateur: {} | undefined): Observable<any> {
-    return this.http.post(this.apiUrl , utilisateur,{ withCredentials: true})
+    return this.http.post(this.apiUrl, utilisateur, {withCredentials: true})
   }
 }
