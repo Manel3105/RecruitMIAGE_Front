@@ -21,7 +21,7 @@ export class SigninformComponent {
   mdp="";
   mdpConfirm="";
   constructor(private inscription : InscriptionService, private routeur: Router) { }
-  inscire() {
+  inscrire() {
 
     this.user = {
       nom: this.nom,
