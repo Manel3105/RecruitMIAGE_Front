@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormsModule} from "@angular/forms";
+import {Router} from "@angular/router";
 import {InscriptionService} from "../../services/inscription.service";
-import {Router} from "express";
 
 @Component({
   selector: 'app-signinform',

@@ -5,9 +5,12 @@ import {PagesAccueilComponent} from "./pages/pages-accueil/pages-accueil.compone
 
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'accueil', pathMatch: 'full'},
   { path: 'register', component: PagesSignInComponent},
   { path: 'login', component: PagesLoginComponent },
-  { path: '', component: PagesAccueilComponent },
+  { path: 'accueil', component: PagesAccueilComponent },
+  { path: '**', component: PagesSignInComponent}
+
 
 
 
