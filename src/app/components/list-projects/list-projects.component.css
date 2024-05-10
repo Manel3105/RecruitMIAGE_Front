@@ -1,0 +1,5 @@
+.project-block {
+  border: 1px solid #ccc; /* Style du contour */
+  padding: 10px; /* Espacement à l'intérieur du bloc */
+  margin-bottom: 20px; /* Espacement entre les blocs */
+}

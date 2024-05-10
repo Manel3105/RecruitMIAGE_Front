@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import {FormsModule} from "@angular/forms";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {InscriptionService} from "../../services/inscription.service";
+
 
 @Component({
   selector: 'app-signinform',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './signinform.component.html',
   styleUrl: './signinform.component.css'
@@ -20,7 +22,7 @@ export class SigninformComponent {
   email="";
   mdp="";
   mdpConfirm="";
-  constructor(private inscription : InscriptionService, private routeur: Router) { }
+  constructor(private inscription : InscriptionService, private router: Router) { }
   inscrire() {
 
     this.user = {
@@ -28,13 +30,15 @@ export class SigninformComponent {
       prenom: this.prenom,
       nomuser: this.nomuser,
       email: this.email,
-      mdp: this.mdp
+      mdp: this.mdp,
+
     }
 
     this.inscription.addutilisateur(this?.user).subscribe(data => {
       console.log(data);
     });
+    this.router.navigate(['/tableaudebord']);
+
   }
 
 }
-//fonction alerte message
