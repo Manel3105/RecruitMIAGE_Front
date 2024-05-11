@@ -1,0 +1,39 @@
+<h2>Créer un Nouveau Projet</h2>
+<form>
+<div class="container mt-4">
+  <div class="card">
+
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="titre" class="form-label">Titre</label>
+          <input type="text"  [(ngModel)]="project.titre" class="form-control" id="titre" name="titre">
+        </div>
+
+        <div class="mb-3">
+          <label for="theme" class="form-label">Thème</label>
+          <input type="text" [(ngModel)]="project.theme" class="form-control" id="theme" name="theme">
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input type="text" [(ngModel)]="project.description" class="form-control" id="description" name="description">
+        </div>
+
+        <div class="mb-3">
+          <label for="nbparticipants" class="form-label">Nombre de participants</label>
+          <input type="number" [(ngModel)]="project.nbparticipants" class="form-control" id="nbparticipants" name="nbparticipants">
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary" (click)="createProject()">Créer</button>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+</form>

@@ -4,17 +4,17 @@
       Connexion
     </div>
     <div class="card-body">
-      <form>
+      <form (ngSubmit)="onLogin()">
 
 
         <div class="mb-3">
           <label for="username" class="form-label">Nom d'utilisateur</label>
-          <input type="text" [(ngModel)]="nomuser" class="form-control" id="username" name="username">
+          <input type="text" [(ngModel)]="username" class="form-control" id="username" name="username" required>
         </div>
 
         <div class="mb-3">
           <label for="password" class="form-label">Mot de passe</label>
-          <input type="password" [(ngModel)]="mdp" class="form-control" id="password" name="password">
+          <input type="password" [(ngModel)]="password" class="form-control" id="password" name="password" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Se connecter</button>
@@ -22,5 +22,3 @@
     </div>
   </div>
 </div>
-
-

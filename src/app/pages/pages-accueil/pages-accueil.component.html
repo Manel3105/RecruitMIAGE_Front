@@ -1,4 +1,10 @@
 <app-navbar></app-navbar>
 <p>Bienvenue sur notre plateforme de recrutement ! </p>
+<div class ="button-container">
+  <button (click)="showCreateProjectForm = true" class="btn btn-primary">Créer un nouveau projet</button>
+</div>
+<div *ngIf="showCreateProjectForm">
+  <app-creer-nv-projet (close)="showCreateProjectForm = false"></app-creer-nv-projet>
+</div>
 <app-list-projects></app-list-projects>
 <app-footer></app-footer>
