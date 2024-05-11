@@ -28,4 +28,8 @@ export class ProjectService {
       }
     });
   }
+
+  getProjects(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:3000/projects');
+  }
 }
