@@ -32,4 +32,11 @@ export class ProjectService {
   getProjects(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:3000/projects');
   }
+
+
+  addMember(projectId: number, iduser: number, role: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/${projectId}/members`, { iduser, role });
+  }
+
+
 }

@@ -1,23 +1,22 @@
 <app-navbar></app-navbar>
-<p>Bienvenue sur notre plateforme de recrutement ! </p>
-<div class ="button-container">
+<h1>Bienvenue sur notre plateforme de recrutement !</h1>
+<div class="button-container">
   <button (click)="showCreateProjectForm = true" class="btn btn-primary">Créer un nouveau projet</button>
 </div>
 <div *ngIf="showCreateProjectForm">
   <app-creer-nv-projet (close)="showCreateProjectForm = false"></app-creer-nv-projet>
 </div>
 <div class="container">
-  <h1>Projets disponibles</h1>
-  <div *ngFor="let project of projects">
-    <div class="card">
-      <div class="card-header">
-        {{ project.titre }}
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">{{ project.theme }}</h5>
-        <p class="card-text">{{ project.description }}</p>
-        <p class="card-text">Participants nécessaires : {{ project.nbparticipants }}</p>
-      </div>
+  <h2>Voici les projets en cours</h2>
+  <div *ngFor="let project of projects" class="card">
+    <div class="card-header">
+      {{ project.titre }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ project.theme }}</h5>
+      <p class="card-text">{{ project.description }}</p>
+      <p class="card-text">Participants nécessaires : {{ project.nbparticipants }}</p>
+      <button (click)="joinProject(project.id.projectId)" class="btn btn-success">Participer</button>
     </div>
   </div>
 </div>
