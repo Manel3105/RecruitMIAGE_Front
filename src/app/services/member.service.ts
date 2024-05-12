@@ -13,7 +13,7 @@ export class MemberService {
   constructor(private http: HttpClient) { }
 
   addMember(projectId: number, userId: number, role: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${projectId}/members`, { userId, role })
+    return this.http.post(`${this.apiUrl}/${projectId}/members`, { projectId, userId, role })
       .pipe(
         catchError(this.handleError)
       );
