@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/new-project.service';
 import {NgForOf} from "@angular/common";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-project-list',
@@ -12,22 +13,18 @@ import {NgForOf} from "@angular/common";
   styleUrls: ['./details-projects.component.css']
 })
 export class DetailsProjectsComponent implements OnInit {
-  projects: any[] = [];
+  project: any;
+  members: any[] = [];
 
-  constructor(private projectService: ProjectService) {}
+  constructor(private projectService: ProjectService, private route: ActivatedRoute) {}
 
-  ngOnInit() {
-    this.loadProjects();
-  }
+  ngOnInit(): void {
+      // @ts-ignore
+    const projectId = +this.route.snapshot.paramMap.get('id'); // Convertit l'id de chaîne en nombre
+      this.projectService.getProjectDetails(projectId).subscribe((data) => {
+        this.project = data; // Mettre à jour pour supposer que `data` est l'objet projet
+        this.members = data.members; // Assurez-vous que votre backend renvoie cette structure ou adaptez selon votre réponse
+      });
+    }
 
-  loadProjects() {
-    this.projectService.getProjects().subscribe(projects => this.projects = projects);
-  }
-
-  participate(projectId: number) {
-    this.projectService.addMember(projectId, 1, 'Participant').subscribe({
-      next: (resp) => alert(resp.message),
-      error: (error) => alert(error.error.message)
-    });
-  }
 }

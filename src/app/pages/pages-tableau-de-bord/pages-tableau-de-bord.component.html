@@ -1,4 +1,25 @@
 <app-navbar></app-navbar>
-<p>pages-tableau-de-bord works!</p>
-<app-footer></app-footer>
+<head>
+  <link rel="stylesheet" type="text/css" href="pages-tableau-de-bord.component.css">
+  <title>Tableau de bord</title>
+</head>
+<body>
+<h1>Tableau de bord</h1>
+</body>
 
+<div class="container">
+  <h3>Voici les projets que vous avez créé</h3>
+  <div *ngFor="let project of projects" class="card">
+    <div class="card-header">
+      {{ project.titre }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ project.theme }}</h5>
+      <p class="card-text">{{ project.description }}</p>
+      <p class="card-text">Participants nécessaires : {{ project.nbparticipants }}</p>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

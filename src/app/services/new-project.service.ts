@@ -29,9 +29,15 @@ export class ProjectService {
     });
   }
 
+  // Dans project.service.ts
+
   getProjects(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:3000/projects');
   }
+  getProjectDetails(projectId: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:3000/projects/${projectId}`);
+  }
+
 
 
   addMember(projectId: number, iduser: number, role: string): Observable<any> {

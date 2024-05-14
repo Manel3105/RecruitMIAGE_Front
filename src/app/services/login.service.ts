@@ -21,7 +21,7 @@ export class LoginService {
         this.router.navigate(['/tableaudebord']);
       },
       error: (error) => {
-        console.error('Error during login:', error.error); // Gestion des erreurs
+        console.error('Error during login:', error.error);
       }
     });
   }

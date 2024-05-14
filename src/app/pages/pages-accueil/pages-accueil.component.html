@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <h1>Bienvenue sur notre plateforme de recrutement !</h1>
+
 <div class="button-container">
   <button (click)="showCreateProjectForm = true" class="btn btn-primary">Créer un nouveau projet</button>
 </div>
@@ -17,6 +18,8 @@
       <p class="card-text">{{ project.description }}</p>
       <p class="card-text">Participants nécessaires : {{ project.nbparticipants }}</p>
       <button (click)="joinProject(project.idprojets)" class="btn btn-success">Participer</button>
+      <button class="btn btn-primary" (click)="goToProjectDetails(project.idprojets)">Détails</button>
+
     </div>
   </div>
 </div>

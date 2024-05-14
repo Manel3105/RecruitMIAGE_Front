@@ -6,6 +6,7 @@ import { ProjectService } from "../../services/new-project.service";
 import { CreerNvProjetComponent } from "../../components/creer-nv-projet/creer-nv-projet.component";
 import { NgIf } from "@angular/common";
 import { MemberService } from "../../services/member.service"
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'app-pages-accueil',
@@ -24,9 +25,11 @@ export class PagesAccueilComponent implements OnInit {
   projects: any[] = [];
   showCreateProjectForm = false;
 
+
   constructor(
     private projectService: ProjectService,
-    private memberService: MemberService
+    private memberService: MemberService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -56,5 +59,9 @@ export class PagesAccueilComponent implements OnInit {
         alert('Erreur lors de l\'inscription au projet.');
       }
     });
+  }
+
+  goToProjectDetails(projectId: number): void {
+    this.router.navigate(['/project-details', projectId]);
   }
 }
