@@ -1,0 +1,49 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid #058583;
+}
+
+h3, h4 {
+  color: #000000;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Times New Roman", sans-serif;
+}
+
+p, li {
+  color: #000000;
+  font-family: "Times New Roman", sans-serif;
+  line-height: 1.6;
+  background-color: rgb(255, 255, 255);
+  padding: 8px;
+  margin-top: 2px;
+  border-radius: 5px;
+  border: 1px solid #a83418;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: rgb(255, 255, 255);
+  padding: 8px;
+  margin-top: 2px;
+  border-radius: 5px;
+  border: 1px solid #a83418;
+}
+
+
+
+
+
+
+
+
+

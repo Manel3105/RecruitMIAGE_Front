@@ -1,39 +1,48 @@
+<!-- Titre de la section pour la création d'un nouveau projet -->
 <h2>Créer un Nouveau Projet</h2>
+
+<!-- Formulaire global pour la création de projet -->
 <form>
-<div class="container mt-4">
-  <div class="card">
+  <!-- Conteneur pour le formulaire avec une marge supérieure -->
+  <div class="container mt-4">
+    <!-- Carte visuelle pour le formulaire -->
+    <div class="card">
+      <!-- Corps de la carte contenant les éléments du formulaire -->
+      <div class="card-body">
+        <!-- Formulaire interne -->
+        <form>
+          <!-- Groupe de formulaire pour le titre du projet -->
+          <div class="mb-3">
+            <label for="titre" class="form-label">Titre</label>
+            <!-- Champ de texte pour le titre, lié au modèle de données du projet -->
+            <input type="text" [(ngModel)]="project.titre" class="form-control" id="titre" name="titre">
+          </div>
 
-    <div class="card-body">
-      <form>
-        <div class="mb-3">
-          <label for="titre" class="form-label">Titre</label>
-          <input type="text"  [(ngModel)]="project.titre" class="form-control" id="titre" name="titre">
-        </div>
+          <!-- Groupe de formulaire pour le thème du projet -->
+          <div class="mb-3">
+            <label for="theme" class="form-label">Thème</label>
+            <!-- Champ de texte pour le thème, également lié au modèle -->
+            <input type="text" [(ngModel)]="project.theme" class="form-control" id="theme" name="theme">
+          </div>
 
-        <div class="mb-3">
-          <label for="theme" class="form-label">Thème</label>
-          <input type="text" [(ngModel)]="project.theme" class="form-control" id="theme" name="theme">
-        </div>
+          <!-- Groupe de formulaire pour la description du projet -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <!-- Champ de texte pour la description -->
+            <input type="text" [(ngModel)]="project.description" class="form-control" id="description" name="description">
+          </div>
 
-        <div class="mb-3">
-          <label for="description" class="form-label">Description</label>
-          <input type="text" [(ngModel)]="project.description" class="form-control" id="description" name="description">
-        </div>
+          <!-- Groupe pour spécifier le nombre de participants -->
+          <div class="mb-3">
+            <label for="nbparticipants" class="form-label">Nombre de participants</label>
+            <!-- Champ numérique pour le nombre de participants -->
+            <input type="number" [(ngModel)]="project.nbparticipants" class="form-control" id="nbparticipants" name="nbparticipants">
+          </div>
 
-        <div class="mb-3">
-          <label for="nbparticipants" class="form-label">Nombre de participants</label>
-          <input type="number" [(ngModel)]="project.nbparticipants" class="form-control" id="nbparticipants" name="nbparticipants">
-        </div>
-
-
-
-        <button type="submit" class="btn btn-primary" (click)="createProject()">Créer</button>
-
-
-      </form>
+          <!-- Bouton pour soumettre le formulaire et créer un projet -->
+          <button type="submit" class="btn btn-primary" (click)="createProject()">Créer</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-
-
 </form>

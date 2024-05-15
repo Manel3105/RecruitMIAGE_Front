@@ -1,46 +1,60 @@
+<!-- Conteneur principal avec une marge pour un meilleur espacement -->
 <div class="container mt-4">
+  <!-- Carte Bootstrap pour structurer visuellement le formulaire -->
   <div class="card">
+    <!-- En-tête de la carte avec un titre descriptif pour le formulaire -->
     <div class="card-header">
       Formulaire d'inscription
     </div>
+    <!-- Corps de la carte contenant le formulaire -->
     <div class="card-body">
+      <!-- Formulaire sans action définie, gestionnaire des événements dans Angular -->
       <form>
+        <!-- Champ pour le nom avec étiquette et champ de saisie -->
         <div class="mb-3">
           <label for="name" class="form-label">Nom</label>
-          <input type="text"  [(ngModel)]="name" class="form-control" id="name" name="name">
+          <!-- Input lié au modèle 'name' pour le binding bidirectionnel avec Angular -->
+          <input type="text" [(ngModel)]="name" class="form-control" id="name" name="name">
         </div>
 
+        <!-- Champ pour le prénom avec étiquette et champ de saisie -->
         <div class="mb-3">
           <label for="firstname" class="form-label">Prénom</label>
+          <!-- Input lié au modèle 'firstname' pour le binding bidirectionnel -->
           <input type="text" [(ngModel)]="firstname" class="form-control" id="firstname" name="firstname">
         </div>
 
+        <!-- Champ pour le nom d'utilisateur avec étiquette et champ de saisie -->
         <div class="mb-3">
           <label for="username" class="form-label">Nom d'utilisateur</label>
+          <!-- Input lié au modèle 'username' pour le binding bidirectionnel -->
           <input type="text" [(ngModel)]="username" class="form-control" id="username" name="username">
         </div>
 
+        <!-- Champ pour l'email avec étiquette et champ de saisie -->
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
+          <!-- Input de type email pour validation automatique de l'email, lié au modèle 'email' -->
           <input type="email" [(ngModel)]="email" class="form-control" id="email" name="email">
         </div>
 
+        <!-- Champ pour le mot de passe avec étiquette et champ de saisie sécurisée -->
         <div class="mb-3">
           <label for="password" class="form-label">Mot de passe</label>
+          <!-- Input de type password, masque la saisie, lié au modèle 'password' -->
           <input type="password" [(ngModel)]="password" class="form-control" id="password" name="password">
         </div>
 
+        <!-- Champ pour la confirmation du mot de passe -->
         <div class="mb-3">
           <label for="passwordConfirm" class="form-label">Confirmez votre mot de passe</label>
+          <!-- Input de type password pour la confirmation, lié au modèle 'passwordConfirm' -->
           <input type="password" [(ngModel)]="passwordConfirm" class="form-control" id="passwordConfirm" name="passwordConfirm">
         </div>
 
+        <!-- Bouton pour soumettre le formulaire, déclenche la fonction 'inscrire()' lors du clic -->
         <button type="submit" class="btn btn-primary" (click)="inscrire()">S'inscrire</button>
-
-
       </form>
     </div>
   </div>
 </div>
-
-

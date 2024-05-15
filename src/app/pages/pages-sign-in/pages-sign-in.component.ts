@@ -1,3 +1,4 @@
+// Importations des modules et services nécessaires
 import { Component } from '@angular/core';
 import {NavbarComponent} from "../../components/navbar/navbar.component";
 import {FooterComponent} from "../../components/footer/footer.component";

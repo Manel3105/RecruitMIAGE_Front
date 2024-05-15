@@ -1,3 +1,29 @@
 h1 {
   text-align: center;
 }
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box; /* Ajoutez ceci pour inclure le padding dans la largeur de la colonne */
+}
+
+/* Styles supplémentaires pour embellir les cartes de projet */
+.project-card {
+  border: 1px solid #a83418;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 15px;
+}

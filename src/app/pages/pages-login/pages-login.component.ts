@@ -1,3 +1,4 @@
+// Importations des modules nécessaires
 import { Component } from '@angular/core';
 import {LoginInFormComponent} from "../../components/login-in-form/login-in-form.component";
 import {NavbarComponent} from "../../components/navbar/navbar.component";

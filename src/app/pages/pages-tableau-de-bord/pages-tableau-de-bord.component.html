@@ -1,25 +1,44 @@
+<!-- Composant de barre de navigation pour assurer une navigation cohérente dans l'application -->
 <app-navbar></app-navbar>
+
+<!-- Section head pour lier les styles CSS spécifiques au tableau de bord et définir le titre de la page -->
 <head>
   <link rel="stylesheet" type="text/css" href="pages-tableau-de-bord.component.css">
   <title>Tableau de bord</title>
 </head>
+
+<!-- Corps principal de la page, contenant le titre principal du tableau de bord -->
 <body>
 <h1>Tableau de bord</h1>
 </body>
 
-<div class="container">
-  <h3>Voici les projets que vous avez créé</h3>
-  <div *ngFor="let project of projects" class="card">
-    <div class="card-header">
-      {{ project.titre }}
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">{{ project.theme }}</h5>
-      <p class="card-text">{{ project.description }}</p>
-      <p class="card-text">Participants nécessaires : {{ project.nbparticipants }}</p>
+<!-- Conteneur principal pour le tableau de bord, divisé en deux colonnes pour différents types de projets -->
+<div class="dashboard">
 
+  <!-- Première colonne pour les projets créés par l'utilisateur -->
+  <div class="column">
+    <h2>Mes projets créés</h2>
+    <!-- Boucle pour afficher chaque projet créé par l'utilisateur -->
+    <div *ngFor="let project of projects" class="project-card">
+      <p>{{ project.titre }}</p> <!-- Affichage du titre du projet -->
+      <p>Theme : {{ project.theme}}</p> <!-- Affichage du thème du projet -->
+      <!-- Bouton pour naviguer vers les détails du projet -->
+      <button class="btn btn-primary" (click)="goToProjectDetails(project.idprojets)">Détails</button>
+    </div>
+  </div>
+
+  <!-- Deuxième colonne pour les projets auxquels l'utilisateur participe -->
+  <div class="column">
+    <h2>Projets auxquels je participe</h2>
+    <!-- Boucle pour afficher chaque projet auquel l'utilisateur participe -->
+    <div *ngFor="let project of participatingProjects" class="project-card">
+      <p>{{ project.titre }}</p> <!-- Affichage du titre du projet -->
+      <p>Theme : {{ project.theme}}</p> <!-- Affichage du thème du projet -->
+      <!-- Bouton pour naviguer vers les détails du projet -->
+      <button class="btn btn-primary" (click)="goToProjectDetails(project.idprojets)">Détails</button>
     </div>
   </div>
 </div>
 
+<!-- Composant de pied de page pour inclure des informations ou des liens supplémentaires -->
 <app-footer></app-footer>

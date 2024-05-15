@@ -1,22 +1,30 @@
+<!-- Conteneur principal avec une marge supérieure pour l'espacement -->
 <div class="container mt-4">
+  <!-- Carte Bootstrap pour structurer le formulaire de connexion -->
   <div class="card">
+    <!-- En-tête de la carte affichant le titre du formulaire -->
     <div class="card-header">
       Connexion
     </div>
+    <!-- Corps de la carte contenant le formulaire -->
     <div class="card-body">
+      <!-- Déclaration du formulaire avec un gestionnaire d'événement pour la soumission -->
       <form (ngSubmit)="onLogin()">
-
-
+        <!-- Champ pour le nom d'utilisateur -->
         <div class="mb-3">
           <label for="username" class="form-label">Nom d'utilisateur</label>
+          <!-- Input pour le nom d'utilisateur avec data binding bidirectionnel grâce à [(ngModel)] -->
           <input type="text" [(ngModel)]="username" class="form-control" id="username" name="username" required>
         </div>
 
+        <!-- Champ pour le mot de passe -->
         <div class="mb-3">
           <label for="password" class="form-label">Mot de passe</label>
+          <!-- Input pour le mot de passe, masqué par défaut, avec data binding bidirectionnel grâce à [(ngModel)] -->
           <input type="password" [(ngModel)]="password" class="form-control" id="password" name="password" required>
         </div>
 
+        <!-- Bouton pour soumettre le formulaire -->
         <button type="submit" class="btn btn-primary">Se connecter</button>
       </form>
     </div>

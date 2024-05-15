@@ -1,3 +1,4 @@
+// Importation des modules nécessaires d'Angular
 import { Component } from '@angular/core';
 
 @Component({

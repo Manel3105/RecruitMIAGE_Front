@@ -1,10 +1,28 @@
+<!-- Composant de barre de navigation, utilisé ici comme une balise HTML personnalisée -->
+<app-navbar></app-navbar>
+
+<!-- Conteneur principal pour le contenu de la page -->
 <div class="container">
-  <h2>{{ project.titre }}</h2>
+  <!-- Affichage du titre du projet en utilisant la syntaxe d'interpolation de Angular -->
+  <h3>{{ project.titre }}</h3>
+
+  <!-- Affichage du thème du projet -->
   <p>Thème : {{ project.theme }}</p>
+
+  <!-- Affichage de la description du projet -->
   <p>Description : {{ project.description }}</p>
+
+  <!-- Affichage du nombre de participants nécessaires pour le projet -->
   <p>Nombre de participants nécessaires : {{ project.nbparticipants }}</p>
-  <h3>Participants :</h3>
+
+  <!-- Sous-titre pour la section des participants -->
+  <h4>Participants</h4>
+
+  <!-- Liste des participants utilisant la directive *ngFor pour itérer sur chaque membre du tableau 'members' -->
   <ul>
     <li *ngFor="let member of members">{{ member.username }}</li>
   </ul>
 </div>
+
+<!-- Composant de pied de page, utilisé ici comme une balise HTML personnalisée -->
+<app-footer></app-footer>

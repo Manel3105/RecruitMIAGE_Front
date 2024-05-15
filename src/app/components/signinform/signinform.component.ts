@@ -1,8 +1,10 @@
+// Importations des modules nécessaires d'Angular
 import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { RouterLink } from "@angular/router";
 import { InscriptionService } from "../../services/inscription.service";
 
+// Décorateur @Component pour définir les propriétés et métadonnées du composant
 @Component({
   selector: 'app-signinform',
   standalone: true,
@@ -14,6 +16,7 @@ import { InscriptionService } from "../../services/inscription.service";
   styleUrls: ['./signinform.component.css']
 })
 export class SigninformComponent {
+  // Déclaration des propriétés pour stocker les données utilisateur saisies dans le formulaire
   user = {};
   firstname = "";
   name = "";
@@ -22,15 +25,18 @@ export class SigninformComponent {
   password = "";
   passwordConfirm = "";
 
+  // Constructeur injectant le service d'inscription
   constructor(private inscriptionService: InscriptionService) { }
 
+  // Méthode pour gérer l'inscription
   inscrire() {
-    // Assurez-vous que les mots de passe correspondent avant de procéder à l'inscription
+    // Vérification que les deux mots de passe entrés sont identiques
     if (this.password !== this.passwordConfirm) {
-      console.error("Les mots de passe ne correspondent pas.");
-      return;
+      console.error("Les mots de passe ne correspondent pas."); // Affichage d'une erreur si les mots de passe ne correspondent pas
+      return; // Arrêt de l'exécution de la méthode si les mots de passe ne correspondent pas
     }
 
+    // Préparation de l'objet utilisateur avec les données collectées
     this.user = {
       nom: this.name,
       prenom: this.firstname,
@@ -39,7 +45,7 @@ export class SigninformComponent {
       mdp: this.password,
     };
 
-    // Utiliser la méthode registerAndRedirect pour inscrire l'utilisateur et le rediriger
+    // Appel du service d'inscription pour enregistrer l'utilisateur et rediriger
     this.inscriptionService.registerAndRedirect(this.user);
   }
 }

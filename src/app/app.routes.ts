@@ -12,8 +12,8 @@ export const routes: Routes = [
   { path: 'login', component: PagesLoginComponent },
   { path: 'accueil', component: PagesAccueilComponent },
   { path: 'project-details/:id', component: DetailsProjectsComponent },
-  { path: 'tableaudebord', component: PagesTableauDeBordComponent}, // Cette ligne doit venir avant le wildcard '**'
-  { path: '**', redirectTo: 'accueil' } // Redirect to 'accueil' or show a 404 page component if you have one
+  { path: 'tableaudebord', component: PagesTableauDeBordComponent},
+  { path: '**', redirectTo: 'accueil' }
 ];
 
 @NgModule({

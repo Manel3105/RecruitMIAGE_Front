@@ -1,27 +1,47 @@
+<!-- Composant de navigation commun, utilisé pour l'affichage de la barre de navigation -->
 <app-navbar></app-navbar>
+
+<!-- Titre de la page, indiquant clairement son objectif -->
 <h1>Bienvenue sur notre plateforme de recrutement !</h1>
 
+<!-- Conteneur pour le bouton qui permet de créer un nouveau projet -->
 <div class="button-container">
+  <!-- Bouton pour afficher le formulaire de création d'un nouveau projet -->
   <button (click)="showCreateProjectForm = true" class="btn btn-primary">Créer un nouveau projet</button>
 </div>
+
+<!-- Section conditionnelle qui affiche le formulaire de création d'un projet si requis -->
 <div *ngIf="showCreateProjectForm">
+  <!-- Composant pour créer un nouveau projet, avec un événement pour le fermer -->
   <app-creer-nv-projet (close)="showCreateProjectForm = false"></app-creer-nv-projet>
 </div>
+
+<!-- Conteneur principal pour la liste des projets -->
 <div class="container">
-  <h2>Voici les projets en cours</h2>
+  <!-- Sous-titre pour la section des projets en cours -->
+  <h2>Les projets en cours</h2>
+
+  <!-- Boucle pour chaque projet dans la liste des projets -->
   <div *ngFor="let project of projects" class="card">
+    <!-- En-tête de la carte pour chaque projet, affichant le titre du projet -->
     <div class="card-header">
       {{ project.titre }}
     </div>
+    <!-- Corps de la carte avec les détails du projet -->
     <div class="card-body">
+      <!-- Thème du projet -->
       <h5 class="card-title">{{ project.theme }}</h5>
+      <!-- Description du projet -->
       <p class="card-text">{{ project.description }}</p>
+      <!-- Nombre de participants nécessaires -->
       <p class="card-text">Participants nécessaires : {{ project.nbparticipants }}</p>
+      <!-- Bouton pour rejoindre le projet -->
       <button (click)="joinProject(project.idprojets)" class="btn btn-success">Participer</button>
+      <!-- Bouton pour aller aux détails du projet -->
       <button class="btn btn-primary" (click)="goToProjectDetails(project.idprojets)">Détails</button>
-
     </div>
   </div>
 </div>
 
+<!-- Composant de pied de page commun, utilisé pour l'affichage du pied de page -->
 <app-footer></app-footer>

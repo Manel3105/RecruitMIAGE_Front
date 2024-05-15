@@ -1,3 +1,4 @@
+// Importations des modules et services nécessaires
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { NavbarComponent } from "../../components/navbar/navbar.component";
@@ -7,6 +8,7 @@ import { CreerNvProjetComponent } from "../../components/creer-nv-projet/creer-n
 import { NgIf } from "@angular/common";
 import { MemberService } from "../../services/member.service"
 import { Router} from "@angular/router";
+import { HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-pages-accueil',
@@ -24,18 +26,22 @@ import { Router} from "@angular/router";
 export class PagesAccueilComponent implements OnInit {
   projects: any[] = [];
   showCreateProjectForm = false;
+  private apiUrl = 'http://localhost:3000/project-details';
+
 
 
   constructor(
     private projectService: ProjectService,
     private memberService: MemberService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
-    this.loadProjects();
+    this.loadProjects(); // Chargement des projets dès l'initialisation du composant
   }
 
+//méthode pour récupérer tous les projets disponibles
   loadProjects() {
     this.projectService.getProjects().subscribe({
       next: (projects) => {
@@ -47,6 +53,7 @@ export class PagesAccueilComponent implements OnInit {
     });
   }
 
+//Cette méthode permet à un utilisateur de s'inscrire à un projet
   joinProject(projectId: number) {
     const userId = 1; // Idéalement, cet ID devrait provenir d'un service d'authentification
     this.memberService.addMember(projectId, userId, 'Participant').subscribe({
@@ -61,7 +68,9 @@ export class PagesAccueilComponent implements OnInit {
     });
   }
 
+//Cette méthode est utilisée pour naviguer vers la page de détails d'un projet spécifique
   goToProjectDetails(projectId: number): void {
     this.router.navigate(['/project-details', projectId]);
   }
+
 }
